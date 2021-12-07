@@ -60,8 +60,10 @@ function draw(){
     
     
     var min_cont_rad = ((second()+(Date.now() % 1000)/1000)/60)*(2*Math.PI);
+    min_count_rad = min_cont_rad - (Math.PI/2)
     var hour_cont_rad = ((minute() + (second()+(Date.now() % 1000)/1000)/60)/60)*(2*Math.PI);
     var sec_cont_rad = (Date.now() % 1000)/1000*(2*Math.PI)
+    sec_cont_rad = sec_cont_rad - (Math.PI/2)
 
 
     strokeWeight(1);
@@ -83,7 +85,7 @@ function draw(){
     // line(hour_x, hour_y, min_x, min_y)
     strokeWeight(0.5);
     
-    var[sec_x, sec_y] = polar_to_cartisian(500, sec_cont_rad, min_x, min_y)
+    var[sec_x, sec_y] = polar_to_cartisian(400, sec_cont_rad, min_x, min_y)
     points.push([sec_x, sec_y]);
 
     stroke(255);
@@ -93,9 +95,11 @@ function draw(){
         //     line(points[i][0], points[i][1], points[i-100][0], points[i-100][1])
         // }
 
-        if (min_cont_rad == min_cont_radStart){
-            points = [];
+        if (i>2700){
+            points.shift();
         }
+        
+        
         
     }
 
