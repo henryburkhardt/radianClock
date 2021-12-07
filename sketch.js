@@ -91,7 +91,7 @@ function draw(){
     point(min_x, min_y)
 
     // line(hour_x, hour_y, min_x, min_y)
-    strokeWeight(1);
+    strokeWeight(4);
     
     var[sec_x, sec_y] = polar_to_cartisian(500, sec_cont_rad, min_x, min_y)
     points.push([sec_x, sec_y]);
@@ -190,6 +190,7 @@ function timeToRadian(){
     
     var m_degrees = (Math.trunc(m/5))/12*360;
     var m_radians = getRad(m_degrees);
+    
 
     var s_degrees = (Math.trunc(s/5))/12*360;
     var s_cont = (s/5)/12*360;
