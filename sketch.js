@@ -67,11 +67,19 @@ function draw(){
 
 
     strokeWeight(1);
-    line(polar_to_cartisian(300,0,width/2,height/2)[0],polar_to_cartisian(300,0,width/2, height/2)[1],polar_to_cartisian(350,0,width/2,height/2)[0],polar_to_cartisian(350,0,width/2,height/2)[1])
-    line(polar_to_cartisian(300,(Math.PI/2),width/2,height/2)[0],polar_to_cartisian(300,(Math.PI/2),width/2, height/2)[1],polar_to_cartisian(350,(Math.PI/2),width/2,height/2)[0],polar_to_cartisian(350,(Math.PI/2),width/2,height/2)[1])
-    line(polar_to_cartisian(300,(Math.PI),width/2,height/2)[0],polar_to_cartisian(300,(Math.PI),width/2, height/2)[1],polar_to_cartisian(350,(Math.PI),width/2,height/2)[0],polar_to_cartisian(350,(Math.PI),width/2,height/2)[1])
-    line(polar_to_cartisian(300,(Math.PI),width/2,height/2)[0],polar_to_cartisian(300,(Math.PI),width/2, height/2)[1],polar_to_cartisian(350,(Math.PI),width/2,height/2)[0],polar_to_cartisian(350,(Math.PI),width/2,height/2)[1])
-    line(polar_to_cartisian(300,(3*Math.PI)/2,width/2,height/2)[0],polar_to_cartisian(300,(3*Math.PI)/2,width/2, height/2)[1],polar_to_cartisian(350,(3*Math.PI)/2,width/2,height/2)[0],polar_to_cartisian(350,(3*Math.PI)/2,width/2,height/2)[1])
+    start = 400;
+    end = 430;
+    radian_measures = [0,(Math.PI/6), (Math.PI/3),(Math.PI/2),(Math.PI*2)/3, (Math.PI*5)/6,(Math.PI),(Math.PI*7)/6, (Math.PI*4)/3,(Math.PI*5)/3, (Math.PI*11)/6,(3*Math.PI)/2]
+
+    for(radian of radian_measures){
+        line(polar_to_cartisian(start,radian,width/2,height/2)[0],polar_to_cartisian(start,radian,width/2, height/2)[1],polar_to_cartisian(end,radian,width/2,height/2)[0],polar_to_cartisian(end,radian,width/2,height/2)[1])
+
+    }
+
+    // line(polar_to_cartisian(start,(Math.PI/2),width/2,height/2)[0],polar_to_cartisian(start,(Math.PI/2),width/2, height/2)[1],polar_to_cartisian(end,(Math.PI/2),width/2,height/2)[0],polar_to_cartisian(end,(Math.PI/2),width/2,height/2)[1])
+    // line(polar_to_cartisian(start,0,width/2,height/2)[0],polar_to_cartisian(start,0,width/2, height/2)[1],polar_to_cartisian(end,0,width/2,height/2)[0],polar_to_cartisian(end,0,width/2,height/2)[1])
+    // line(polar_to_cartisian(start,(Math.PI),width/2,height/2)[0],polar_to_cartisian(start,(Math.PI),width/2, height/2)[1],polar_to_cartisian(end,(Math.PI),width/2,height/2)[0],polar_to_cartisian(end,(Math.PI),width/2,height/2)[1])
+    // line(polar_to_cartisian(start,(3*Math.PI)/2,width/2,height/2)[0],polar_to_cartisian(start,(3*Math.PI)/2,width/2, height/2)[1],polar_to_cartisian(end,(3*Math.PI)/2,width/2,height/2)[0],polar_to_cartisian(end,(3*Math.PI)/2,width/2,height/2)[1])
 
     // var [hour_x, hour_y] = polar_to_cartisian(100, hour_cont_rad,width/2,height/2)
     // point(hour_x, hour_y)
@@ -79,13 +87,13 @@ function draw(){
 
     strokeWeight(6);
     stroke(143, 81, 214);
-    var [min_x, min_y] = polar_to_cartisian(300, min_cont_rad, width/2, height/2)
+    var [min_x, min_y] = polar_to_cartisian(400, min_cont_rad, width/2, height/2)
     point(min_x, min_y)
 
     // line(hour_x, hour_y, min_x, min_y)
     strokeWeight(1);
     
-    var[sec_x, sec_y] = polar_to_cartisian(350, sec_cont_rad, min_x, min_y)
+    var[sec_x, sec_y] = polar_to_cartisian(500, sec_cont_rad, min_x, min_y)
     points.push([sec_x, sec_y]);
 
     
