@@ -67,40 +67,41 @@ function draw(){
 
 
     strokeWeight(1);
-    line(polar_to_cartisian(400,0,width/2,height/2)[0],polar_to_cartisian(400,0,width/2, height/2)[1],polar_to_cartisian(440,0,width/2,height/2)[0],polar_to_cartisian(440,0,width/2,height/2)[1])
-    line(polar_to_cartisian(400,(Math.PI/2),width/2,height/2)[0],polar_to_cartisian(400,(Math.PI/2),width/2, height/2)[1],polar_to_cartisian(440,(Math.PI/2),width/2,height/2)[0],polar_to_cartisian(440,(Math.PI/2),width/2,height/2)[1])
-    line(polar_to_cartisian(400,(Math.PI),width/2,height/2)[0],polar_to_cartisian(400,(Math.PI),width/2, height/2)[1],polar_to_cartisian(440,(Math.PI),width/2,height/2)[0],polar_to_cartisian(440,(Math.PI),width/2,height/2)[1])
-    line(polar_to_cartisian(400,(Math.PI),width/2,height/2)[0],polar_to_cartisian(400,(Math.PI),width/2, height/2)[1],polar_to_cartisian(440,(Math.PI),width/2,height/2)[0],polar_to_cartisian(440,(Math.PI),width/2,height/2)[1])
-    line(polar_to_cartisian(400,(3*Math.PI)/2,width/2,height/2)[0],polar_to_cartisian(400,(3*Math.PI)/2,width/2, height/2)[1],polar_to_cartisian(440,(3*Math.PI)/2,width/2,height/2)[0],polar_to_cartisian(440,(3*Math.PI)/2,width/2,height/2)[1])
+    line(polar_to_cartisian(300,0,width/2,height/2)[0],polar_to_cartisian(300,0,width/2, height/2)[1],polar_to_cartisian(350,0,width/2,height/2)[0],polar_to_cartisian(350,0,width/2,height/2)[1])
+    line(polar_to_cartisian(300,(Math.PI/2),width/2,height/2)[0],polar_to_cartisian(300,(Math.PI/2),width/2, height/2)[1],polar_to_cartisian(350,(Math.PI/2),width/2,height/2)[0],polar_to_cartisian(350,(Math.PI/2),width/2,height/2)[1])
+    line(polar_to_cartisian(300,(Math.PI),width/2,height/2)[0],polar_to_cartisian(300,(Math.PI),width/2, height/2)[1],polar_to_cartisian(350,(Math.PI),width/2,height/2)[0],polar_to_cartisian(350,(Math.PI),width/2,height/2)[1])
+    line(polar_to_cartisian(300,(Math.PI),width/2,height/2)[0],polar_to_cartisian(300,(Math.PI),width/2, height/2)[1],polar_to_cartisian(350,(Math.PI),width/2,height/2)[0],polar_to_cartisian(350,(Math.PI),width/2,height/2)[1])
+    line(polar_to_cartisian(300,(3*Math.PI)/2,width/2,height/2)[0],polar_to_cartisian(300,(3*Math.PI)/2,width/2, height/2)[1],polar_to_cartisian(350,(3*Math.PI)/2,width/2,height/2)[0],polar_to_cartisian(350,(3*Math.PI)/2,width/2,height/2)[1])
 
     // var [hour_x, hour_y] = polar_to_cartisian(100, hour_cont_rad,width/2,height/2)
     // point(hour_x, hour_y)
     // line(width/2,height/2, hour_x, hour_y)
 
-    strokeWeight(4);
+    strokeWeight(6);
     stroke(143, 81, 214);
-    var [min_x, min_y] = polar_to_cartisian(400, min_cont_rad, width/2, height/2)
+    var [min_x, min_y] = polar_to_cartisian(300, min_cont_rad, width/2, height/2)
     point(min_x, min_y)
 
     // line(hour_x, hour_y, min_x, min_y)
-    strokeWeight(0.5);
+    strokeWeight(1);
     
-    var[sec_x, sec_y] = polar_to_cartisian(400, sec_cont_rad, min_x, min_y)
+    var[sec_x, sec_y] = polar_to_cartisian(350, sec_cont_rad, min_x, min_y)
     points.push([sec_x, sec_y]);
+
+    
 
     stroke(255);
     for(i in points){
-        point(points[i][0], points[i][1])
+        point(points[i][0], points[i][1]);
         // if(i>100){
         //     line(points[i][0], points[i][1], points[i-100][0], points[i-100][1])
         // }
 
-        if (i>2700){
-            points.shift();
-        }
-        
-        
-        
+        // if(i > 100){
+        //     points.shift();
+        //     print('run one minutes');
+        //     return
+        // }
     }
 
 
