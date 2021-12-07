@@ -101,14 +101,17 @@ function draw(){
     point(hour_x, hour_y)
 
     //drawing the second dots around the minute dot every frame, stores in array
-    strokeWeight(2);
+    strokeWeight(1);
     stroke(255);
 
-    var[sec_x, sec_y] = polar_to_cartisian(370, sec_cont_rad, min_x, min_y)
+    var[sec_x, sec_y] = polar_to_cartisian(500, sec_cont_rad, min_x, min_y)
     points.push([sec_x, sec_y]);
     
     for(i in points){
         point(points[i][0], points[i][1]);
+        // if(i>200){
+        //     line(points[i][0], points[i][1], points[i-200][0], points[i-200][1])
+        // }
 
         if(i > 4000){
             //limits on screen dots to 4000
