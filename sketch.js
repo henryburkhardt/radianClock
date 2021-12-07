@@ -105,11 +105,10 @@ function draw(){
         //     line(points[i][0], points[i][1], points[i-100][0], points[i-100][1])
         // }
 
-        // if(i > 100){
-        //     points.shift();
-        //     print('run one minutes');
-        //     return
-        // }
+        if(i > 4000){
+            points.shift();
+            print('run one minutes');
+        }
     }
 
 
