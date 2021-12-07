@@ -74,8 +74,8 @@ function draw(){
     sec_cont_rad = sec_cont_rad - (Math.PI/2)
 
     //drawing lines (by radians in unit circle)
-    start = 300;
-    end = 330;
+    start = 250;
+    end = 280;
     radian_measures =   [0,(Math.PI/6), (Math.PI/3),
                         (Math.PI/2),(Math.PI*2)/3, (Math.PI*5)/6,
                         (Math.PI),(Math.PI*7)/6, (Math.PI*4)/3,
@@ -104,7 +104,7 @@ function draw(){
     strokeWeight(2);
     stroke(255);
 
-    var[sec_x, sec_y] = polar_to_cartisian(500, sec_cont_rad, min_x, min_y)
+    var[sec_x, sec_y] = polar_to_cartisian(370, sec_cont_rad, min_x, min_y)
     points.push([sec_x, sec_y]);
     
     for(i in points){
@@ -118,16 +118,16 @@ function draw(){
 
     //drawing clock text
     fill(204);
-    textSize(40);
+    textSize(30);
     textFont('Georgia');
     strokeWeight(0.02);
     
     textAlign(RIGHT, CENTER); //hours
-    text(timeToRadian()[0], width/2-90, height/2);
+    text(timeToRadian()[0], width/2-60, height/2);
 
     textAlign(CENTER); //minutes
     text(": "+timeToRadian()[1]+" :", width/2, height/2);
 
     textAlign(LEFT); //seconds
-    text(timeToRadian()[2], width/2+90, height/2);
+    text(timeToRadian()[2], width/2+60, height/2);
 }
